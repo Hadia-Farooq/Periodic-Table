@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Periodic Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <p class="eyebrow">CHEMISTRY • ELEMENT EXPLORER</p>
+        <h1>Periodic <span>Table</span></h1>
+        <p class="intro">Select any element to explore its details.</p>
+    </header>
+
+    <main>
+        <section class="table-section">
+
+            <div class="table-heading">
+                <h2>All Elements</h2>
+                <p>118 Elements · Click an element</p>
+            </div>
+
+            <!-- Search -->
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by name, symbol or atomic number..."
+            >
+
+            <!-- Category Filters -->
+          <div class="filters">
+    <button class="filter-btn active" onclick="filterCategory('all', this)" style="background: #afb8b5;">All</button>
+    <button class="filter-btn" onclick="filterCategory('reactive-nonmetal', this)" style=" background: #b9dce9; ">Nonmetals</button>
+    <button class="filter-btn" onclick="filterCategory('noble-gas', this)" style="background: #c9c6ed;">Noble Gases</button>
+    <button class="filter-btn" onclick="filterCategory('alkali-metal', this)" style="background: #f5c9b9; ">Alkali Metals</button>
+    <button class="filter-btn" onclick="filterCategory('alkaline-earth-metal', this)" style="background: #f7dfaa; ">Alkaline Earth</button>
+    <button class="filter-btn" onclick="filterCategory('transition-metal', this)" style=" background: #f4ed9d;">Transition Metals</button>
+    <button class="filter-btn" onclick="filterCategory('metalloid', this)" style=" background: #a9dfcf;">Metalloids</button>
+    <button class="filter-btn" onclick="filterCategory('lanthanide', this)" style=" background: #e9c6e6;">Lanthanides</button>
+    <button class="filter-btn" onclick="filterCategory('actinide', this)" style=" background: #efc5ce;">Actinides</button>
+</div>
+
+
+            <p class="result-count" id="resultCount">118 elements found</p>
+
+          <!-- Table Area -->
+
+<div class="table-area">
+
+    <!-- Element Details Panel -->
+    <section class="details" id="detailsPanel">
+
+        <button class="close-btn" onclick="closeDetails()">×</button>
+
+        <div class="detail-top">
+            <span id="detailCategory">ELEMENT DETAILS</span>
+            <span id="detailNumber">—</span>
+        </div>
+
+        <div class="detail-main">
+            <div class="detail-symbol" id="detailSymbol">?</div>
+
+            <div>
+                <h2 id="detailName">Element Name</h2>
+                <p id="detailMass">Atomic mass</p>
+            </div>
+        </div>
+
+        <div class="detail-info">
+            <div>
+                <span>Atomic Number</span>
+                <strong id="infoNumber">—</strong>
+            </div>
+
+            <div>
+                <span>Atomic Mass</span>
+                <strong id="infoMass">—</strong>
+            </div>
+
+            <div>
+                <span>Category</span>
+                <strong id="infoCategory">—</strong>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Periodic Table -->
+    <div class="table-scroll">
+        <div id="periodicTable" class="periodic-table"></div>
+    </div>
+
+</div>
+    </main>
+
+    <footer>Made with HTML, CSS & JavaScript</footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
